@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica para el menú de Cursos (El que acabas de añadir)
+    // Lógica para el menú de Cursos
     if (cursosToggle && cursosDropdown) {
         cursosToggle.addEventListener('click', (e) => {
             e.preventDefault();
