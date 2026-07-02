@@ -2,25 +2,190 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Asistencias</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Fuerte Accidente en la México-Pachuca Hoy: ¿Qué Pasó en San Pedro Xalostoc, Ecatepec? | N+</title>
+    <!-- Tailwind CSS para el diseño rápido y limpio -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons para los iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-<div class="login-container">
-    <h1>Sistema de Asistencias</h1>
-    <p class="subtitle">Ingrese sus credenciales</p>
+    <!-- HEADER PRINCIPAL -->
+    <header class="w-full bg-white border-b border-gray-200">
+        
+<!-- 1. Barra superior de Divisas (Tamaño de letra aumentado) -->
+        <div class="w-full bg-gray-50 py-2.5 px-4 text-base font-medium border-b border-gray-100">
+            <div class="max-w-7xl mx-auto flex justify-center items-center gap-8 text-gray-600">
+                <div>
+                    <span class="font-bold text-gray-950 text-lg">GBP/MXN</span> 
+                    <span class="ml-1.5 font-semibold">23.205</span> 
+                    <span class="text-green-600 font-bold ml-1.5">0.183%</span>
+                </div>
+                <div class="text-gray-300">|</div> <!-- Separador visual -->
+                <div>
+                    <span class="font-bold text-gray-950 text-lg">JPY/MXN</span> 
+                    <span class="ml-1.5 font-semibold">0.108</span> 
+                    <span class="text-red-500 font-bold ml-1.5">-0.204%</span>
+                </div>
+            </div>
+        </div>
 
-    <form id="loginForm">
-        <input type="text" id="usuario" placeholder="Usuario">
-        <input type="password" id="password" placeholder="Contraseña">
-        <button type="submit">Iniciar Sesión</button>
-    </form>
+        <!-- 2. Barra Central: Buscador, Logo y Login -->
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Izquierda: Buscador y Fecha -->
+            <div class="flex items-center gap-3 text-sm text-gray-500 w-1/3">
+                <i data-lucide="search" class="w-5 h-5 text-gray-800 cursor-pointer"></i>
+                <span class="select-none">2 de julio de 2026</span>
+            </div>
 
-    <div id="message"></div>
-</div>
+            <!-- Centro: Logo N+ -->
+            <div class="flex items-center justify-center w-1/3">
+                <div class="flex items-center font-black text-3xl tracking-tighter text-slate-900">
+                    <span class="italic transform -skew-x-12 mr-0.5">N</span>
+                    <span class="text-2xl font-light text-slate-800">+</span>
+                </div>
+            </div>
 
-<script src="js/login.js"></script>
+            <!-- Derecha: Botón Inicia Sesión -->
+            <div class="flex justify-end w-1/3">
+                <button class="border border-gray-800 rounded-lg px-4 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
+                    Inicia sesión N+
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. Barra de Navegación Inferior -->
+        <nav class="w-full border-t border-gray-100 py-3 px-4">
+            <div class="max-w-4xl mx-auto flex items-center justify-center gap-8 text-sm font-medium text-gray-600">
+                
+                <!-- Botón En Vivo -->
+                <a href="#" class="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5 text-red-500 hover:bg-red-50 transition-colors font-semibold">
+                    <span class="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></span>
+                    En Vivo
+                </a>
+
+                <!-- Enlaces del Menú -->
+                <a href="#" class="hover:text-black transition-colors">Mundial 2026</a>
+                <a href="#" class="hover:text-black transition-colors">Sociedad</a>
+                <a href="#" class="hover:text-black transition-colors">Estados</a>
+                <a href="#" class="hover:text-black transition-colors">Internacional</a>
+                <a href="#" class="hover:text-black transition-colors">Videos</a>
+                <a href="#" class="hover:text-black transition-colors">Entretenimiento</a>
+                
+                <button class="flex items-center gap-1 hover:text-black transition-colors">
+                    Más <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CUERPO DEL ARTÍCULO -->
+    <main class="max-w-3xl mx-auto px-4 py-8">
+        
+        <!-- Migas de pan (Breadcrumbs) -->
+        <nav class="text-xs text-gray-400 mb-4 flex items-center gap-1">
+            <a href="#" class="hover:underline">Estado de México</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <a href="#" class="hover:underline">Seguridad</a>
+            <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            <a href="#" class="hover:underline">Accidentes</a>
+        </nav>
+
+        <!-- Etiqueta de sección -->
+        <span class="text-xs font-bold tracking-widest text-red-600 uppercase">Accidentes</span>
+
+        <!-- Título principal -->
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4 leading-tight">
+            Aqui podemos hacer nuestros art. 87
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="text-lg md:text-xl text-gray-600 font-medium mb-6 leading-relaxed">
+            Al menos tres personas resultaron lesionadas por el aparatoso accidente de hoy en la México-Pachuca.
+        </p>
+
+        <!-- Metadatos de la nota -->
+        <div class="flex items-center gap-3 border-t border-b border-gray-200 py-3 mb-8 text-xs text-gray-500">
+            <div class="font-bold text-gray-800">Por Redacción N+</div>
+            <div class="text-gray-300">|</div>
+            <div>1 jul 2026 | 07:06 CST</div>
+            <div class="text-gray-300">|</div>
+            <div>Actualizado 1 jul 2026 | 07:54 CST</div>
+        </div>
+
+        <!-- Contenedor de Imagen de Referencia (Simulada) -->
+        <div class="w-full bg-gray-200 aspect-video rounded-lg flex flex-col items-center justify-center text-gray-500 mb-2 relative overflow-hidden">
+            <i data-lucide="image" class="w-12 h-12 text-gray-400 mb-2"></i>
+            <p class="text-xs font-mono">Espacio para Imagen: image_869da3.png</p>
+            <div class="absolute bottom-0 left-0 w-full bg-black/60 text-white text-xs px-3 py-2">
+                Accidente en la Autopista México-Pachuca hoy, 1 de julio de 2026. Foto: N+
+            </div>
+        </div>
+        <span class="block text-xs text-gray-400 text-right mb-8">Foto de referencia provista en image_869da3.png</span>
+
+        <!-- Caja de Destacado / Resumen -->
+        <div class="bg-gray-100 border-l-4 border-slate-900 p-4 mb-6 rounded-r-lg">
+            <h3 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-1">Destacado</h3>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">
+                Caos en la Autopista México-Pachuca: un fuerte accidente con volcadura provoca largas filas. Al menos cuatro personas resultaron lesionadas. Infórmate sobre lo ocurrido.
+            </p>
+        </div>
+
+        <!-- Contenido de la Nota -->
+        <article class="prose max-w-none text-gray-800 space-y-6 leading-relaxed text-base md:text-lg">
+            
+            <p>
+                Un aparatoso accidente ocurrió la mañana de hoy, 1 de julio de 2026, en la Autopista México-Pachuca; aquí te informamos qué pasó este miércoles en la zona de San Pedro Xalostoc, en Ecatepec de Morelos, Estado de México.
+            </p>
+
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 pt-4">¿Qué pasó en la Autopista México-Pachuca hoy?</h2>
+            
+            <p>
+                De acuerdo con los primeros reportes, tres autos y un tráiler se vieron involucrados en un fuerte accidente, que provocó la volcadura de uno de los vehículos en la Autopista México-Pachuca, a la altura de la calle 5 de Febrero, en el municipio de Ecatepec.
+            </p>
+
+            <p>
+                Conductores declararon a <strong>N+</strong> que por el tráfico, intentaron esquivar a un tráiler, unidad que no pudo frenar e impactó a los autos.
+            </p>
+
+            <p>
+                Al menos cuatro personas resultaron lesionadas, por la carambola en la Autopista México-Pachuca, con dirección a Indios Verdes, Ciudad de México (CDMX).
+            </p>
+
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 pt-4">Caos por carambola en la México-Pachuca</h2>
+
+            <p>
+                Por el accidente y la volcadura de un auto blanco, se registraron largas filas de carros varados por el cierre parcial de la Autopista México-Pachuca, a unos 2.5 kilómetros de la escultura de El Vigilante.
+            </p>
+
+            <p>
+                El dron de <strong>N+</strong> pudo captar las filas de autos, a lo largo de varios kilómetros de la México-Pachuca.
+            </p>
+
+            <p>
+                Al lugar del accidente acudieron elementos del Cuerpo de Bomberos, Protección Civil de Ecatepec y policías municipales, quienes atendieron la emergencia y a las personas lesionadas.
+            </p>
+
+        </article>
+
+        <!-- Etiquetas finales de temas -->
+        <div class="mt-10 pt-6 border-t border-gray-200 flex items-center gap-2">
+            <span class="text-xs font-bold text-gray-400 uppercase">Temas relacionados:</span>
+            <a href="#" class="text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-full transition-colors font-medium">Accidentes</a>
+            <a href="#" class="text-xs bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-full transition-colors font-medium">Estado de México</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="w-full bg-white border-t border-gray-200 mt-20 py-6 text-center text-xs text-gray-400">
+        <p>© 2026 Derechos reservados © Tritón Comunicaciones S.A de C.V.</p>
+    </footer>
+
+    <!-- Inicialización de iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
