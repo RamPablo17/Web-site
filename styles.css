@@ -1,657 +1,187 @@
 /* ===================================================
-   VARIABLES DE COLOR OFICIALES (PANTONE CENATRA)
+   VARIABLES Y ESTILOS GENERALES
    =================================================== */
 :root {
-    --guinda-principal: #611232;   /* PANTONE 7421 C */
-    --guinda-oscuro-gob: #4c1126;  /* Color institucional secundario */
-    --carmesi-suave: #9b2247;      /* PANTONE 7420 C */
-    --dorado-oficial: #a57f2c;     /* PANTONE 1255 C */
-    --champagne-claro: #e6d194;    /* PANTONE 7402 C */
-    --negro-neutral: #161a1d;      /* PANTONE Neutral Black C */
-    --gris-cool: #98989a;          /* PANTONE Cool Gray 7 C */
-    --gris-fondo: #F4F6F9;        
-    --blanco: #FFFFFF;            
-    --blanco-transparente: rgba(255, 255, 255, 0.8);
-    /* 45px (GobBar) + 38px (SubBar) + 60px (CenatraBar) = 143px */
-    --header-height: 120px;        
+    --primary-color: #002147;
+    --hover-color: #1c3d5a;
+    --text-color: #333333;
+    --bg-light: #f4f6f9;
+    --white: #ffffff;
+    --transition-fast: all 0.3s ease;
 }
 
-/* ===================================================
-   RESET Y CONFIGURACIÓN BASE
-   =================================================== */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--gris-fondo);
-    color: var(--negro-neutral);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-color: var(--bg-light);
+    color: var(--text-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: var(--guinda-principal);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 /* ===================================================
-   NAVBAR SUPERIOR INSTITUCIONAL COMPUESTO (TRIPLE FILA)
+   1 y 2. NAVBAR Y DROPDOWNS
    =================================================== */
-.site-header {
-    position: fixed;
+.navbar {
+    background-color: var(--primary-color);
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1030;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Contenedor utilitario alineado al estándar de Gob.mx */
-.gob-mx-container {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* --- FILA 1: Identidad Federal (Logo más grande) --- */
-.gob-mx-top-bar {
-    background-color: var(--guinda-principal);
-    height: 60px; /* Aumentado de 45px a 60px */
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.gob-mx-logo-img {
-    height: 42px;
-    width: auto;
-    object-fit: contain;
-}
-
-.gob-mx-links-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.gob-mx-links-right a {
-    color: var(--blanco);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.gob-mx-links-right a:hover {
-    text-decoration: underline;
-}
-
-.gob-mx-search-btn {
-    background: none;
-    border: none;
-    color: var(--blanco);
-    cursor: pointer;
-    font-size: 0.85rem;
-}
-
-/* --- FILA 2: Acciones y Programas Nacionales --- */
-.gob-mx-sub-bar {
-    background-color: var(--guinda-oscuro-gob);
-    height: 38px;
-    display: flex;
-    align-items: center;
-}
-
-.sub-bar-menu {
-    display: flex;
-    list-style: none;
-    gap: 24px;
-}
-
-.sub-bar-menu li a {
-    color: var(--blanco-transparente);
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 400;
-}
-
-.sub-bar-menu li a:hover {
-    color: var(--blanco);
-}
-
-/* --- FILA 3: Menú Interno CENATRA --- */
-.navbar-gob {
-    width: 100%;
-    height: 60px;
-    background-color: var(--blanco);
-    display: flex;
-    align-items: center;
-    border-bottom: 3px solid var(--dorado-oficial);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .navbar-container {
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
 }
 
-.navbar-left-brand {
-    display: flex;
-    align-items: center;
+.navbar-brand {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.cenatra-brand {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--negro-neutral);
-    letter-spacing: 0.5px;
-}
-
-.cenatra-brand small {
-    font-weight: 500;
-    color: var(--gris-cool);
-    font-size: 0.85rem;
-}
-
-.nav-links-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .nav-menu {
     display: flex;
-    align-items: center;
-    gap: 8px;
     list-style: none;
+    align-items: center;
 }
 
 .nav-item {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--negro-neutral);
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 4px;
-}
-
-.nav-item:hover, .nav-item.active {
-    background-color: rgba(97, 18, 50, 0.08);
-    color: var(--guinda-principal);
-}
-
-/* Dropdowns */
-.dropdown {
     position: relative;
 }
 
-.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: var(--transition-fast);
 }
 
-.nav-arrow {
-    font-size: 0.75rem;
-    transition: transform 0.2s;
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }
 
-.dropdown.open .nav-arrow {
-    transform: rotate(180deg);
-}
-
+/* Menús Desplegables (Dropdowns) */
 .dropdown-menu {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--guinda-principal);
-    min-width: 220px;
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     list-style: none;
-    padding: 6px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-}
-
-.dropdown-menu.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    min-width: 200px;
+    border-radius: 4px;
+    padding: 5px 0;
 }
 
 .dropdown-menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
     display: block;
-    padding: 10px 18px;
-    color: var(--blanco);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
+    transition: var(--transition-fast);
 }
 
 .dropdown-menu li a:hover {
-    background-color: var(--carmesi-suave);
-    color: var(--champagne-claro);
+    background-color: var(--bg-light);
+    color: var(--primary-color);
 }
 
-.btn-navbar-login {
-    background-color: var(--guinda-principal);
-    color: var(--blanco);
-    padding: 7px 16px;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-left: 10px;
-}
-
-.btn-navbar-login:hover {
-    background-color: var(--dorado-oficial);
-    color: var(--blanco);
-}
-
-.nav-toggle-btn {
-    display: none;
-    background: transparent;
-    border: none;
-    color: var(--guinda-principal);
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-/* ===================================================
-   ESTRUCTURA DEL CONTENIDO FULL WIDTH
-   =================================================== */
-.main-content-fluid {
-    width: 100%;
-    margin-top: var(--header-height);
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.container-gov-fluid {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 24px;
-}
-
-.bg-white {
-    background-color: var(--blanco);
-    max-width: 100% !important;
-}
-
-.bg-white > div, .bg-white > h2 {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: var(--guinda-principal);
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
+/* Clases activadas por JavaScript */
+.dropdown-menu.show {
     display: block;
-    width: 50px;
-    height: 4px;
-    background-color: var(--dorado-oficial);
-    margin: 12px auto 0;
 }
 
 /* ===================================================
-   HERO BANNER
+   3. SISTEMA DE ACORDEONES
    =================================================== */
-.hero {
-    background: linear-gradient(rgba(97, 18, 50, 0.45), rgba(97, 18, 50, 0.45)), 
-                url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    height: 55vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--blanco);
-    padding: 0 24px;
+.accordion-section {
+    margin-top: 40px;
 }
 
-.hero-content h1 {
-    color: var(--blanco);
-    font-size: 3.5rem;
-    margin-bottom: 12px;
-}
-
-.hero-content h3 {
-    color: var(--champagne-claro);
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-primary {
-    background-color: var(--dorado-oficial);
-    color: var(--blanco);
-    padding: 12px 28px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.btn-primary:hover {
-    background-color: var(--champagne-claro);
-    color: var(--guinda-principal);
-}
-
-.btn-hero-outline {
-    background-color: transparent;
-    border: 2px solid var(--blanco);
-}
-
-.btn-hero-outline:hover {
-    background-color: var(--blanco);
-    color: var(--guinda-principal);
-}
-
-/* ===================================================
-   TARJETAS, ACORDEONES Y TABLAS
-   =================================================== */
-.mision-container {
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.25rem;
-    color: #4a4a4a;
-    font-weight: 300;
-    line-height: 1.8;
-}
-
-.grid-cards {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-
-.card {
-    flex: 1;
-    background: var(--blanco);
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(0,0,0,0.06);
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.card-img img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.card-category {
-    font-size: 0.75rem;
-    color: var(--gris-cool);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-}
-
-.card-text {
-    color: #555;
-    font-size: 0.92rem;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-.btn-outline {
-    border: 2px solid var(--dorado-oficial);
-    color: var(--dorado-oficial);
-    padding: 10px 16px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 0.88rem;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: auto;
-}
-
-.btn-outline:hover {
-    background-color: var(--dorado-oficial);
-    color: var(--blanco);
-}
-
-/* Acordeones */
 .accordion-item {
-    background: var(--blanco);
-    margin-bottom: 12px;
-    border: 1px solid #e1e6eb;
+    background-color: var(--white);
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
     border-radius: 4px;
     overflow: hidden;
 }
 
 .accordion-header {
-    padding: 18px 24px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 18px 20px;
+    background-color: #fafafa;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
     cursor: pointer;
-    background: var(--blanco);
+    transition: var(--transition-fast);
 }
 
-.accordion-header h4 {
-    font-size: 1.05rem;
-    margin: 0;
-    font-weight: 600;
+.accordion-header:hover {
+    background-color: #f0f4f8;
 }
 
 .accordion-header .icon {
-    font-size: 1.3rem;
-    color: var(--dorado-oficial);
-}
-
-.accordion-header.active {
-    background: var(--guinda-principal);
-}
-
-.accordion-header.active h4,
-.accordion-header.active .icon {
-    color: var(--blanco);
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background: #fbfbfb;
+    background-color: var(--white);
 }
 
-.accordion-content p {
-    padding: 20px 24px;
-    color: #4a4a4a;
-    margin: 0;
-}
-
-.course-list {
-    list-style: none;
-    padding: 8px 24px;
-}
-
-.course-list li {
-    padding: 14px 0;
-    border-bottom: 1px solid #eef2f5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.course-list li:last-child {
-    border-bottom: none;
-}
-
-.course-list li strong {
-    font-weight: 600;
-}
-
-.course-list li span {
-    font-size: 0.85rem;
-    color: var(--dorado-oficial);
-    background-color: #f7f3e8;
-    padding: 4px 10px;
-    border-radius: 4px;
-}
-
-/* Paneles estructurales */
-.panel-container {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 40px;
-}
-
-.panel-staff {
-    background-color: var(--gris-fondo);
-    padding: 30px;
-    border-radius: 6px;
-    border-top: 4px solid var(--guinda-principal);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.staff-block h5 {
-    color: var(--gris-cool);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-}
-
-.staff-block p {
-    font-size: 1.05rem;
-    color: var(--negro-neutral);
-}
-
-.staff-block ul {
-    list-style: none;
-    margin-top: 6px;
-}
-
-.staff-block ul li {
-    font-size: 0.92rem;
-    padding: 4px 0 4px 15px;
-    position: relative;
-}
-
-.staff-block ul li::before {
-    content: '•';
-    color: var(--dorado-oficial);
-    position: absolute;
-    left: 0;
-}
-
-.question-box {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    background-color: var(--gris-fondo);
+.accordion-inner {
     padding: 20px;
-    border-radius: 6px;
-    margin-bottom: 12px;
-    border-left: 4px solid var(--dorado-oficial);
-}
-
-.q-num {
-    font-size: 1.25rem;
-    color: var(--guinda-principal);
-    background: rgba(97, 18, 50, 0.06);
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-top: 1px solid #eeeeee;
+    line-height: 1.6;
 }
 
 /* ===================================================
-   CARRUSEL DE IMÁGENES CLÁSICO
+   4. CARRUSEL INFORMATIVO
    =================================================== */
-.carousel-section {
-    padding: 40px 20px 0 20px; 
-    background-color: var(--gris-fondo);
-    display: flex;
-    justify-content: center;
-}
-
 .carousel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1200px;    
-    aspect-ratio: 12 / 5; 
+    height: 350px;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 8px 22px rgba(196, 34, 155, 0.1);
-    background-color: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .carousel-track {
@@ -664,53 +194,41 @@ img {
 .carousel-slide {
     min-width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    padding: 40px;
+    text-align: center;
 }
 
-.carousel-slide a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+.carousel-slide h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    transition: opacity 0.3s ease;
-}
-
-.carousel-slide a:hover img {
-    opacity: 0.93;
-}
-
-.carousel-arrow {
+.carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(17, 42, 70, 0.7);
-    color: var(--blanco);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--white);
     border: none;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    padding: 12px 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition-fast);
     z-index: 10;
 }
 
-/* Corregido bug de variable faltante */
-.carousel-arrow:hover {
-    background-color: var(--dorado-oficial);
-    transform: translateY(-50%) scale(1.08);
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.carousel-arrow.prev { left: 20px; }
-.carousel-arrow.next { right: 20px; }
+.carousel-control.prev { left: 20px; }
+.carousel-control.next { right: 20px; }
 
 .carousel-indicators {
     position: absolute;
@@ -723,405 +241,71 @@ img {
 }
 
 .carousel-indicators .indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* Corregido bug de variable faltante */
-.carousel-indicators .indicator.active {
-    background-color: var(--champagne-claro);
-    transform: scale(1.1);
-    width: 24px;
-    border-radius: 10px;
-}
-
-/* ===================================================
-   DIRECTORIO
-   =================================================== */
-.team-grid {
-    justify-content: center;
-}
-
-.team-card {
-    flex: 1;
-    max-width: 450px;
-    background: var(--blanco);
-    padding: 35px 20px;
-    text-align: center;
-    border-radius: 6px;
-    border: 1px solid #e1e6eb;
-}
-
-.team-img {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid var(--dorado-oficial);
-}
-
-.team-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.team-role {
-    color: var(--dorado-oficial);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-/* ===================================================
-   SECCIÓN DE ACCESOS DIRECTOS (ESTILO GOB.MX)
-   =================================================== */
-.section-title-left {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    color: #333333;
-    margin-bottom: 25px;
-    text-align: left;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.section-title-left::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 4px;
-    background-color: var(--dorado-oficial);
-}
-
-.grid-accesos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.acceso-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: transparent;
     border: none;
     cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.2s ease;
+    transition: var(--transition-fast);
 }
 
-.acceso-card:hover {
-    transform: translateY(-4px);
-}
-
-.acceso-img {
-    width: 100%;
-    aspect-ratio: 1 / 1.1;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    margin-bottom: 12px;
-    border: 1px solid #e1e6eb;
-}
-
-.acceso-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.acceso-card:hover .acceso-img img {
-    transform: scale(1.05);
-}
-
-.acceso-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #444444;
-    line-height: 1.3;
-    margin: 0;
-    padding: 0 5px;
-    transition: color 0.2s ease;
-}
-
-.acceso-card:hover .acceso-title {
-    color: var(--guinda-principal);
-}
-
-@media (max-width: 480px) {
-    .grid-accesos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    .acceso-title {
-        font-size: 0.85rem;
-    }
+.carousel-indicators .indicator.active {
+    background-color: var(--white);
+    transform: scale(1.2);
 }
 
 /* ===================================================
-   FOOTER FEDERAL
+   RESPONSIVE (MÓVILES Y TABLETS)
    =================================================== */
-.main-footer {
-    background-color: #611232;
-    color: #ffffff;
-    padding: 50px 24px 20px;
-    font-size: 13px;
-    border-top: 3px solid var(--dorado-oficial);
-    margin-top: auto;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 40px;
-}
-
-.footer-gov-logo {
-    height: 45px;
-    width: auto;
-    margin-bottom: 15px;
-}
-
-.footer-stamp {
-    color: #888;
-    font-size: 11px;
-    line-height: 1.5;
-}
-
-.main-footer h4 {
-    color: var(--champagne-claro);
-    font-size: 15px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--carmesi-suave);
-    padding-bottom: 4px;
-}
-
-.main-footer ul {
-    list-style: none;
-}
-
-.main-footer ul li {
-    margin-bottom: 8px;
-}
-
-.main-footer ul li a {
-    color: #ccc;
-}
-
-.main-footer ul li a:hover {
-    color: var(--blanco);
-    text-decoration: underline;
-}
-
-.footer-info-text {
-    color: #ccc;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.footer-info-text a {
-    color: var(--champagne-claro);
-    text-decoration: underline;
-}
-
-.denuncia-link {
-    color: var(--blanco);
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-.social-networks {
-    display: flex;
-    gap: 15px;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.social-networks a { color: var(--blanco); }
-
-.footer-address {
-    max-width: 1200px;
-    margin: 30px auto 0;
-    padding-top: 15px;
-    border-top: 1px solid #222;
-    text-align: center;
-    color: #555;
-    font-size: 11px;
-}
-
-/* ===================================================
-   RESPONSIVO (MEDIA QUERIES)
-   =================================================== */
-@media (max-width: 992px) {
-    .grid-cards { flex-wrap: wrap; }
-    .card { min-width: calc(50% - 15px); }
-    .panel-container { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 768px) {
-    /* Ocultar las dos barras superiores federales en móviles para optimizar espacio */
-    .gob-mx-top-bar, .gob-mx-sub-bar {
-        display: none !important;
-    }
-    
-    /* Reajustar altura dinámica del header en móvil */
-    :root {
-        --header-height: 60px;
+    .navbar-toggle {
+        display: block;
     }
 
-    .nav-toggle-btn { display: block; }
-    
     .nav-menu {
+        display: none;
         position: absolute;
-        top: var(--header-height);
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--guinda-principal); /* Corregido color verde oliva */
+        background-color: var(--primary-color);
         flex-direction: column;
-        gap: 0;
+        align-items: flex-start;
         padding: 10px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        display: none; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .nav-menu.show { display: flex; }
+    .nav-menu.show {
+        display: flex;
+    }
 
-    .nav-menu li { width: 100%; text-align: center; }
-    
     .nav-item {
-        display: block;
-        padding: 14px 0;
-        border-radius: 0;
-        color: var(--blanco);
+        width: 100%;
     }
-    
-    .nav-item:hover, .nav-item.active {
-        background-color: rgba(255,255,255,0.15);
-        color: var(--champagne-claro);
+
+    .nav-link {
+        padding: 12px 20px;
     }
 
     .dropdown-menu {
         position: static;
         width: 100%;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
+        background-color: var(--hover-color);
         box-shadow: none;
-        background-color: rgba(0,0,0,0.2);
-        display: none;
+        border-radius: 0;
+        padding-left: 15px;
     }
 
-    .dropdown-menu.show { display: block; }
-
-    .btn-navbar-login {
-        display: block;
-        margin: 10px 20px;
-        text-align: center;
-        background-color: var(--dorado-oficial);
+    .dropdown-menu li a {
+        color: rgba(255, 255, 255, 0.8);
     }
 
-    .grid-cards { flex-direction: column; }
-    .card { width: 100%; }
-    .hero-content h1 { font-size: 2.2rem; }
-    .carousel-wrapper { aspect-ratio: 4/3; }
-}
+    .carousel-wrapper {
+        height: 250px;
+    }
 
-/* ===================================================
-   AJUSTES EXCLUSIVOS PARA EL DASHBOARD DE ESCRITORES
-   =================================================== */
-.panel-container {
-    display: grid;
-    grid-template-columns: 260px 1fr !important; 
-    gap: 0 !important;
-}
-
-.panel-staff {
-    height: 100%;
-    border-radius: 0 !important;
-    border-top: none !important;
-    border-right: 1px solid #e1e6eb;
-    background-color: #ffffff !important;
-    padding: 30px 20px !important;
-}
-
-.staff-block ul li {
-    padding: 0 !important; 
-    margin-bottom: 8px;
-}
-
-.staff-block ul li::before {
-    content: "" !important; 
-}
-
-.staff-block ul li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.staff-block ul li a:hover {
-    background-color: rgba(97, 18, 50, 0.05);
-    color: var(--guinda-principal);
-}
-
-/* ===================================================
-   AJUSTES EXCLUSIVOS PARA EL DASHBOARD DE ESCRITORES
-   =================================================== */
-.panel-container {
-    display: grid;
-    grid-template-columns: 260px 1fr !important; 
-    gap: 0 !important;
-}
-
-.panel-staff {
-    height: 100%;
-    border-radius: 0 !important;
-    border-top: none !important;
-    border-right: 1px solid #e1e6eb;
-    background-color: #ffffff !important;
-    padding: 30px 20px !important;
-}
-
-.staff-block ul li {
-    padding: 0 !important; 
-    margin-bottom: 8px;
-}
-
-.staff-block ul li::before {
-    content: "" !important; 
-}
-
-.staff-block ul li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.staff-block ul li a:hover {
-    background-color: rgba(97, 18, 50, 0.05);
-    color: var(--guinda-principal);
+    .carousel-slide h2 {
+        font-size: 1.5rem;
+    }
 }
